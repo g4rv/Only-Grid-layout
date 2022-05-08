@@ -461,7 +461,7 @@ body *, body *::before, body *::after {
   text-align: center;
   padding: 20px 20px;
   width: 100%;
-  max-width: 270px;
+  max-width: 220px;
   text-transform: capitalize;
   color: hsl(var(--clr-neutral-1));
   font-size: var(--fz-25);
@@ -470,16 +470,23 @@ body *, body *::before, body *::after {
 }
 
 .header {
-  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: hsl(var(--clr-neutral-1));
+  z-index: var(--z-top);
 }
 .header__wrap {
+  position: relative;
   display: grid;
   align-items: center;
   grid-template-columns: min-content 1fr;
   grid-template-rows: 80px;
   gap: 15px;
-  z-index: var(--z-top);
+  padding-inline: 15px;
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1650px;
 }
 .header .burger {
   margin-left: auto;
@@ -491,6 +498,11 @@ body *, body *::before, body *::after {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.main {
+  display: grid;
+  gap: 70px;
 }
 
 .nav {
@@ -507,7 +519,7 @@ body *, body *::before, body *::after {
   margin: auto;
   height: fit-content;
   background-color: hsl(var(--clr-neutral-1));
-  box-shadow: inset 0px 5px 5px -5px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 5px 5px -5px rgba(0, 0, 0, 0.5), 0px 10px 15px 0px rgba(0, 0, 0, 0.2);
   opacity: 0;
   transform: translateX(-200%);
   transition: opacity 0.4s ease-in, transform 0.4s ease-in;
@@ -520,7 +532,7 @@ body *, body *::before, body *::after {
 }
 .nav__list {
   display: grid;
-  gap: 15px;
+  gap: 25px;
 }
 .nav__link {
   position: relative;
@@ -552,7 +564,7 @@ body *, body *::before, body *::after {
 
 .hero {
   display: grid;
-  grid-template-rows: min-content 1fr;
+  grid-template-rows: auto 1fr;
   justify-items: center;
   align-items: center;
   gap: 25px;
@@ -599,11 +611,73 @@ body *, body *::before, body *::after {
   object-position: center;
 }
 
+.intro__title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: hsl(var(--clr-cyan-60));
+}
+.intro__subtitle {
+  text-align: center;
+  margin-bottom: 30px;
+  color: hsl(var(--clr-cyan-50));
+}
+.intro__wrap {
+  position: relative;
+  display: grid;
+  background-color: hsl(var(--clr-cyan-10));
+}
+.intro__preview {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+.intro__text {
+  text-align: center;
+  font-size: var(--fz-20);
+}
+.intro__link {
+  order: -1;
+  text-transform: uppercase;
+  font-weight: var(--fw-700);
+  letter-spacing: 0.2em;
+}
+.intro__link::before, .intro__link::after {
+  content: "";
+  position: absolute;
+}
+.intro__link::before {
+  top: 25px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: 75px;
+  aspect-ratio: 1/1;
+  background-color: hsl(var(--clr-neutral-1));
+  box-shadow: 0px 0px 0px 10px hsla(var(--clr-neutral-1), 0.4);
+  border-radius: 50%;
+}
+.intro__video {
+  order: -1;
+  width: 100%;
+  aspect-ratio: 2/1;
+}
+.intro__img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 48em) {
+  .nav__btn {
+    max-width: 270px;
+  }
+}
 @media (min-width: 62em) {
   .header {
-    padding: 85px 0;
+    padding: 85px 0 15px;
   }
-  .header .nav {
+
+  .nav {
     position: static;
     display: grid;
     grid-template-columns: 1fr max-content;
@@ -615,7 +689,7 @@ body *, body *::before, body *::after {
     box-shadow: none;
     transition: none;
   }
-  .header .nav__list {
+  .nav__list {
     display: grid;
     grid-template-columns: repeat(4, max-content);
     justify-self: center;
@@ -623,16 +697,21 @@ body *, body *::before, body *::after {
     gap: 45px;
     height: 100%;
   }
-  .header .nav__btn {
+  .nav__btn {
     justify-self: end;
-    padding: 20px;
+    width: 270px;
+  }
+
+  .main {
+    gap: 120px;
   }
 
   .hero {
-    grid-template-columns: auto auto;
+    grid-template-columns: auto 1fr;
     grid-template-rows: none;
   }
   .hero__wrap {
+    justify-self: start;
     justify-items: start;
     gap: 50px;
   }
@@ -665,7 +744,7 @@ body *, body *::before, body *::after {
   }
 
   .hero__preview {
-    margin-block: auto;
+    align-self: center;
   }
 }
 /*# sourceMappingURL=style.min.css.map */

@@ -1,15 +1,22 @@
 .header {
-    position: relative;
+    // position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     background-color: hsl(var(--clr-neutral-1));
+    z-index: var(--z-top);
     
     &__wrap {
+        position: relative;
         display: grid;
         align-items: center;
         grid-template-columns: min-content 1fr;
         grid-template-rows: 80px;
         gap: 15px;
-
-        z-index: var(--z-top);
+        padding-inline: 15px;
+        margin-inline: auto;
+        width: 100%;
+        max-width: 1650px;
     }
 
     .burger {

@@ -14,46 +14,57 @@
 
 //768px
 @include breakpoint-up(medium) { // Up /\
+    .nav {
+        &__btn {
+            max-width: 270px;
+        }
+    }
 }
 
 //992px
 @include breakpoint-up(large) { // Up /\
 
     .header {
-        padding: 85px 0;
-        .nav {
-            position: static;
-            display: grid;
-            grid-template-columns: 1fr max-content;
-            grid-template-rows: 1fr;
-            padding: 0;
-            width: 100%;
-            opacity: 1;
-            transform: translateY(0);
-            box-shadow: none;
-            transition: none;
-            
-            &__list {
-                display: grid;
-                grid-template-columns: repeat(4, max-content);
-                justify-self: center;
-                align-items: center;
-                gap: 45px;
-                height: 100%;
-            }
+        padding: 85px 0 15px;
+    }
 
-            &__btn {
-                justify-self: end;
-                padding: 20px;
-            }
+    .nav {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        grid-template-rows: 1fr;
+        padding: 0;
+        width: 100%;
+        opacity: 1;
+        transform: translateY(0);
+        box-shadow: none;
+        transition: none;
+        
+        &__list {
+            display: grid;
+            grid-template-columns: repeat(4, max-content);
+            justify-self: center;
+            align-items: center;
+            gap: 45px;
+            height: 100%;
+        }
+
+        &__btn {
+            justify-self: end;
+            width: 270px;
         }
     }
 
+    .main {
+        gap: 120px;
+    }
+
     .hero {
-        grid-template-columns: auto auto;
+        grid-template-columns: auto 1fr;
         grid-template-rows: none;
 
         &__wrap {
+            justify-self: start;
             justify-items: start;
             gap: 50px;
         }
@@ -100,7 +111,7 @@
 
     .hero {
         &__preview {
-            margin-block: auto;
+            align-self: center;
         }
     }
 }
