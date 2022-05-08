@@ -1,0 +1,95 @@
+@use "alias/mixins" as *;
+
+@include breakpoint-up(small) { // Up /\
+    
+}
+@include breakpoint-down(small) { // Down \/
+    
+}
+
+@include breakpoint-up(xxsmall) { // Up /\
+    
+}
+@include breakpoint-down(xxsmall) { // Down \/
+    
+}
+
+@include breakpoint-up(xsmall) { // Up /\
+    
+}
+@include breakpoint-down(xsmall) { // Down \/
+    
+}
+
+@include breakpoint-up(medium) { // Up /\
+
+}
+@include breakpoint-down(medium) { // Down \/
+}
+
+@include breakpoint-up(large) { // Up /\
+
+    .header {
+        padding: 85px 0;
+        .nav {
+            position: static;
+            display: grid;
+            grid-template-columns: 1fr max-content;
+            grid-template-rows: 1fr;
+            padding: 0;
+            width: 100%;
+            opacity: 1;
+            transform: translateY(0);
+            box-shadow: none;
+            transition: none;
+            
+            &__list {
+                display: grid;
+                grid-template-columns: repeat(4, max-content);
+                justify-self: center;
+                align-items: center;
+                gap: 45px;
+                height: 100%;
+            }
+
+            &__btn {
+                justify-self: end;
+                padding: 20px;
+            }
+        }
+    }
+    .burger {
+         display: none;
+    } 
+}
+@include breakpoint-down(large) { // Down \/
+    .btn {
+        &--sharp {
+            border-bottom-left-radius: 15px;
+        }
+    }
+}
+
+@include breakpoint-up(xlarge) { // Up /\
+    .header {
+        .nav {
+            &__list {
+                gap: 85px;
+            }
+        }
+
+        .logo {
+            width: 160px;
+        }
+    }
+}
+@include breakpoint-down(xlarge) { // Down \/
+
+}
+
+@include breakpoint-up(xxlarge) { // Up /\
+    
+}
+@include breakpoint-down(xxlarge) { // Down \/
+    
+}
