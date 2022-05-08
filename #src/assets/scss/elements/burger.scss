@@ -1,0 +1,41 @@
+.burger {
+    position: relative;
+    width: 30px;
+    height: 30px;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 80%;
+        height: 4px;
+        background-color: hsl(var(--clr-cyan-40));
+        border-radius: 25px;
+    }
+
+    &::before {
+        top: 5px;
+    }
+
+    
+    &::after {
+        bottom: 5px;
+    }
+
+    span {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 80%;
+        height: 4px;
+        background-color: hsl(var(--clr-cyan-40));
+        border-radius: 25px;
+    }
+}
