@@ -1,32 +1,22 @@
 @use "alias/mixins" as *;
 
+//375px
 @include breakpoint-up(small) { // Up /\
-    
-}
-@include breakpoint-down(small) { // Down \/
-    
 }
 
-@include breakpoint-up(xxsmall) { // Up /\
-    
-}
-@include breakpoint-down(xxsmall) { // Down \/
-    
+//480px
+@include breakpoint-up(xxsmall) { // Up /\ 
 }
 
-@include breakpoint-up(xsmall) { // Up /\
-    
-}
-@include breakpoint-down(xsmall) { // Down \/
-    
+//576px
+@include breakpoint-up(xsmall) { // Up /\ 
 }
 
+//768px
 @include breakpoint-up(medium) { // Up /\
-
-}
-@include breakpoint-down(medium) { // Down \/
 }
 
+//992px
 @include breakpoint-up(large) { // Up /\
 
     .header {
@@ -58,18 +48,43 @@
             }
         }
     }
+
+    .hero {
+        grid-template-columns: auto auto;
+        grid-template-rows: none;
+
+        &__wrap {
+            justify-items: start;
+            gap: 50px;
+        }
+
+        &__title {
+            text-align: start;
+        }
+
+        &__text {
+            text-align: start;
+        }
+
+        &__preview {
+            order: unset;
+            width: 100%;
+            min-width: 300px;
+        }
+    }
+
     .burger {
          display: none;
     } 
-}
-@include breakpoint-down(large) { // Down \/
+
     .btn {
         &--sharp {
-            border-bottom-left-radius: 15px;
+            border-bottom-left-radius: 0;
         }
     }
 }
 
+//1200px
 @include breakpoint-up(xlarge) { // Up /\
     .header {
         .nav {
@@ -82,14 +97,15 @@
             width: 160px;
         }
     }
-}
-@include breakpoint-down(xlarge) { // Down \/
 
+    .hero {
+        &__preview {
+            margin-block: auto;
+        }
+    }
 }
 
+//1400px
 @include breakpoint-up(xxlarge) { // Up /\
-    
-}
-@include breakpoint-down(xxlarge) { // Down \/
     
 }

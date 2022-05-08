@@ -1,9 +1,9 @@
 body {
 	font-family: "Poppins";
     *, *::before, *::after {
-        line-height: 1.5;
+        line-height: var(--lh);
     }
-    background-color: grey;
+    // background-color: grey;
 }
 
 .container {
@@ -12,11 +12,13 @@ body {
 }
 
 .h1-like {
+    color: hsl(var(--clr-cyan-60));
     font-size: var(--fz-70);
     font-weight: var(--fw-800);
 }
 
 .h2-like {
+    color: hsl(var(--clr-cyan-60));
     font-size: var(--fz-40);
     font-weight: var(--fw-700);
 }

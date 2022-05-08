@@ -12,12 +12,14 @@ $z-index: (
 );
 
 :root {
+    // Colors
     @each $color, $shades in $colors {
         @each $shade, $value in $shades {
             --clr-#{$color}-#{$shade}: #{$value};
         }
     }
 
+    // Font size
     @each $screen-size, $font-sizes in $font-size {
         @if $screen-size == xxsmall {
             @each $size, $value in $font-sizes {
@@ -44,12 +46,23 @@ $z-index: (
         }
     }
 
-    
-
+    // Font Weight
     @each $weight, $value in $font-weight {
         --fw-#{$weight}: #{$value};
     }
 
+    // Line-height
+    @each $screen-size, $value in $line-height {
+        @if $screen-size == small {
+            --lh: #{$value};
+        } @else {
+            @include breakpoint-up(medium) {
+                --lh: #{$value};
+            }
+        }
+    }
+
+    // z-index
     @each $index, $height in $z-index {
         --z-#{$index}: #{$height};
     }
