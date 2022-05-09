@@ -1,0 +1,32 @@
+.mission {
+    display: grid;
+    justify-items: center;
+    gap: 25px;
+    margin-inline: auto;
+
+    &__title {
+        order: 1;
+        text-align: center;
+        max-width: 490px;
+    }
+
+    &__text {
+        order: 3;
+        text-align: justify;
+        max-width: 710px;
+        font-size: var(--fz-30);
+    }
+
+    &__preview {
+        order: 2;
+        min-width: 130px;
+        width: 100%;
+        max-width: 650px;
+        aspect-ratio: 1/1;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+    }
+}

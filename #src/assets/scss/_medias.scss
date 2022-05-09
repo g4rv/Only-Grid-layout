@@ -10,6 +10,29 @@
 
 //576px
 @include breakpoint-up(xsmall) { // Up /\ 
+    .mission {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        grid-template-rows: min-content min-content;
+        justify-items: start;
+        gap: 25px 15px;
+    
+        &__title {
+            text-align: start;
+        }
+        
+        &__text {
+            text-align: justify;
+            grid-column: 1/3;
+            grid-row: 2/3;
+        }
+    
+        &__preview {
+            grid-column: 1/2;
+            grid-row: 1/2;
+            min-width: 250px;
+        }
+    }
 }
 
 //768px
@@ -85,6 +108,14 @@
     }
 
     .intro {
+        &__title {
+            margin-bottom: 20px;
+        }
+
+        &__subtitle {
+            margin-bottom: 30px;
+        }
+
         &__wrap {
             grid-template-columns: 65% 35%;
             grid-template-rows: 350px;
@@ -123,6 +154,32 @@
 
         &__video {
             aspect-ratio: unset;
+        }
+    }
+
+    .mission {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: min-content 1fr;
+        align-items: center;
+        gap: 50px;
+        margin-inline: unset;
+    
+        &__title {
+        }
+        
+        &__text {
+            align-self: flex-start;
+            text-align: start;
+            grid-column: 2/3;
+            grid-row: 2/3;
+        }
+    
+        &__preview {
+            align-self: flex-start;
+            grid-column: 1/2;
+            grid-row: 1/3;
+            min-width: 250px;
         }
     }
 

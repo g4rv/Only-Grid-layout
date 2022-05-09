@@ -503,7 +503,10 @@ body *, body *::before, body *::after {
 .main {
   display: grid;
   grid-template-columns: 100%;
-  gap: 70px;
+  gap: 20px;
+}
+.main section {
+  padding: 20px 0;
 }
 
 .nav {
@@ -569,7 +572,6 @@ body *, body *::before, body *::after {
   justify-items: center;
   align-items: center;
   gap: 25px;
-  padding: 20px 0;
 }
 .hero__wrap {
   display: grid;
@@ -614,12 +616,12 @@ body *, body *::before, body *::after {
 
 .intro__title {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   color: hsl(var(--clr-cyan-60));
 }
 .intro__subtitle {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   color: hsl(var(--clr-cyan-50));
   font-size: var(--fz-30);
 }
@@ -690,6 +692,57 @@ body *, body *::before, body *::after {
   height: 100%;
 }
 
+.mission {
+  display: grid;
+  justify-items: center;
+  gap: 25px;
+  margin-inline: auto;
+}
+.mission__title {
+  order: 1;
+  text-align: center;
+  max-width: 490px;
+}
+.mission__text {
+  order: 3;
+  text-align: justify;
+  max-width: 710px;
+  font-size: var(--fz-30);
+}
+.mission__preview {
+  order: 2;
+  min-width: 130px;
+  width: 100%;
+  max-width: 650px;
+  aspect-ratio: 1/1;
+}
+.mission__img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 30em) {
+  .mission {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content min-content;
+    justify-items: start;
+    gap: 25px 15px;
+  }
+  .mission__title {
+    text-align: start;
+  }
+  .mission__text {
+    text-align: justify;
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+  .mission__preview {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    min-width: 250px;
+  }
+}
 @media (min-width: 48em) {
   .nav__btn {
     max-width: 270px;
@@ -750,6 +803,12 @@ body *, body *::before, body *::after {
     min-width: 300px;
   }
 
+  .intro__title {
+    margin-bottom: 20px;
+  }
+  .intro__subtitle {
+    margin-bottom: 30px;
+  }
   .intro__wrap {
     grid-template-columns: 65% 35%;
     grid-template-rows: 350px;
@@ -780,6 +839,27 @@ body *, body *::before, body *::after {
   }
   .intro__video {
     aspect-ratio: unset;
+  }
+
+  .mission {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content 1fr;
+    align-items: center;
+    gap: 50px;
+    margin-inline: unset;
+  }
+  .mission__text {
+    align-self: flex-start;
+    text-align: start;
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  .mission__preview {
+    align-self: flex-start;
+    grid-column: 1/2;
+    grid-row: 1/3;
+    min-width: 250px;
   }
 
   .burger {
