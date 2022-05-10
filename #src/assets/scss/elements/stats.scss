@@ -1,0 +1,22 @@
+.stats {
+    display: grid;
+    gap: 15px;
+    &__stat {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        gap: 15px;
+        color: hsl(var(--clr-cyan-20));
+    }
+    
+    &__numb {
+        text-align: center;
+        font-size: var(--fz-70);
+        font-weight: var(--fw-800);
+    }
+    
+    &__achv {
+        font-size: var(--fz-30);
+        font-weight: var(--fw-600);
+    }
+}

@@ -1,0 +1,16 @@
+.clients {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 15px;
+
+    &__client {
+        max-width: 300px;
+    }
+
+    &__logo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}

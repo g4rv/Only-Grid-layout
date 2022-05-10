@@ -1,15 +1,15 @@
 @use "alias/mixins" as *;
 
 //375px
-@include breakpoint-up(small) { // Up /\
+@include breakpoint-up(xxsmall) { // Up /\
 }
 
 //480px
-@include breakpoint-up(xxsmall) { // Up /\ 
+@include breakpoint-up(xsmall) { // Up /\ 
 }
 
 //576px
-@include breakpoint-up(xsmall) { // Up /\ 
+@include breakpoint-up(small) { // Up /\ 
     .mission {
         display: grid;
         grid-template-columns: min-content 1fr;
@@ -50,12 +50,24 @@
 
     .review {
         &__block {
-            grid-template-columns: auto 1fr;
+            grid-template-columns: 1fr 2fr;
+        }
+        &__inner {
+            padding: 35px;
+        }
+
+        &__comment {
+            &::before {
+                left: -1.5em;
+            }
         }
         &__preview {
-            width: 90%;
             aspect-ratio: unset;
         }
+    }
+
+    .clients {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -80,28 +92,20 @@
     }
 
     .review {
-        &__block {
-            grid-template-columns: 1fr 1fr;
-        }
+        gap: 50px;
         &__inner {
-            gap: 60px;
-            padding: 15px 15px 15px 50px;
+            padding: 30px 40px 30px 60px;
         }
 
-        &__quote {
+        &__comment {
             text-align: start;
-        }
-        &__preview {
-            width: 100%;
         }
     }
 
-    .stats {
-        &__stat {
-            grid-template-columns: 1fr;
-            grid-template-rows: min-content min-content;
-            gap: 0;
-        }
+
+    .clients {
+        grid-template-columns: repeat(4, auto);
+        justify-content: space-evenly;
     }
 }
 
@@ -225,9 +229,6 @@
         align-items: center;
         gap: 50px;
         margin-inline: unset;
-    
-        &__title {
-        }
         
         &__text {
             align-self: flex-start;
@@ -269,32 +270,23 @@
     }
 
     .review {
-        &__block {
-            grid-template-columns: 615px 1fr;
-        }
         &__inner {
-            justify-content: center;
-            align-content: center;
-            padding: 20px 110px 20px 140px;
-            margin-inline: auto;
-        }
-        &__quote {
-            text-align: start;
-        }
-        &__stats {
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            justify-content: space-between;
-        }
-        &__preview {
-            width: 100%;
+            padding: 50px 100px;
         }
     }
 
     .stats {
+        grid-template-columns: min-content 170px 205px;
+        justify-content: space-between;
+        gap: 25px;
+        
         &__stat {
-            grid-template-columns: 1fr;
+            grid-template-columns: unset;
             grid-template-rows: min-content min-content;
-            gap: 0;
+        }
+
+        &__numb {
+            text-align: start;
         }
     }
 
@@ -332,5 +324,13 @@
 
 //1400px
 @include breakpoint-up(xxlarge) { // Up /\
-    
+    .review {
+        &__inner {
+            gap: 50px;
+            padding: 50px 70px 70px 110px;
+        }
+        &__preview {
+            aspect-ratio: 615/700;
+        }
+    }
 }

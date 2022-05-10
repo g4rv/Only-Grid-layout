@@ -495,6 +495,27 @@ body *, body *::before, body *::after {
   bottom: calc(var(--bottom) - 15px);
 }
 
+.stats {
+  display: grid;
+  gap: 15px;
+}
+.stats__stat {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 15px;
+  color: hsl(var(--clr-cyan-20));
+}
+.stats__numb {
+  text-align: center;
+  font-size: var(--fz-70);
+  font-weight: var(--fw-800);
+}
+.stats__achv {
+  font-size: var(--fz-30);
+  font-weight: var(--fw-600);
+}
+
 .header {
   top: 0;
   left: 0;
@@ -797,6 +818,10 @@ body *, body *::before, body *::after {
   height: 100%;
 }
 
+.review {
+  display: grid;
+  gap: 25px;
+}
 .review__title {
   text-align: center;
   font-size: min(var(--fz-70), 5vw + 1.2rem);
@@ -808,16 +833,12 @@ body *, body *::before, body *::after {
 .review__inner {
   display: grid;
   gap: 45px;
-  padding: 45px;
-}
-.review__stats {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 25px;
+  padding: 35px 15px;
 }
 .review__comment {
   position: relative;
   display: grid;
+  text-align: center;
   gap: 25px;
   font-size: var(--fz-25);
   font-weight: var(--fw-500);
@@ -826,7 +847,7 @@ body *, body *::before, body *::after {
   content: "";
   position: absolute;
   top: -2em;
-  left: -1.5em;
+  left: -0.5em;
   width: 4em;
   aspect-ratio: 1/1;
   background-image: url("../img/svg/quote.svg");
@@ -836,7 +857,6 @@ body *, body *::before, body *::after {
 }
 .review__quote {
   position: relative;
-  text-align: center;
   color: hsl(var(--clr-cyan-30));
   z-index: var(--z-low);
 }
@@ -867,7 +887,7 @@ body *, body *::before, body *::after {
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  gap: 30px;
+  gap: 15px;
 }
 .clients__client {
   max-width: 300px;
@@ -878,23 +898,7 @@ body *, body *::before, body *::after {
   object-fit: contain;
 }
 
-.stats__stat {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  gap: 15px;
-  color: hsl(var(--clr-cyan-20));
-}
-.stats__numb {
-  font-size: var(--fz-70);
-  font-weight: var(--fw-800);
-}
-.stats__achv {
-  font-size: var(--fz-30);
-  font-weight: var(--fw-600);
-}
-
-@media (min-width: 30em) {
+@media (min-width: 36em) {
   .mission {
     display: grid;
     grid-template-columns: min-content 1fr;
@@ -925,11 +929,20 @@ body *, body *::before, body *::after {
   }
 
   .review__block {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr 2fr;
+  }
+  .review__inner {
+    padding: 35px;
+  }
+  .review__comment::before {
+    left: -1.5em;
   }
   .review__preview {
-    width: 90%;
     aspect-ratio: unset;
+  }
+
+  .clients {
+    grid-template-columns: 1fr 1fr;
   }
 }
 @media (min-width: 48em) {
@@ -947,24 +960,19 @@ body *, body *::before, body *::after {
     max-width: 600px;
   }
 
-  .review__block {
-    grid-template-columns: 1fr 1fr;
+  .review {
+    gap: 50px;
   }
   .review__inner {
-    gap: 60px;
-    padding: 15px 15px 15px 50px;
+    padding: 30px 40px 30px 60px;
   }
-  .review__quote {
+  .review__comment {
     text-align: start;
   }
-  .review__preview {
-    width: 100%;
-  }
 
-  .stats__stat {
-    grid-template-columns: 1fr;
-    grid-template-rows: min-content min-content;
-    gap: 0;
+  .clients {
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-evenly;
   }
 }
 @media (min-width: 62em) {
@@ -1100,30 +1108,21 @@ body *, body *::before, body *::after {
     align-self: flex-end;
   }
 
-  .review__block {
-    grid-template-columns: 615px 1fr;
-  }
   .review__inner {
-    justify-content: center;
-    align-content: center;
-    padding: 20px 110px 20px 140px;
-    margin-inline: auto;
-  }
-  .review__quote {
-    text-align: start;
-  }
-  .review__stats {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    justify-content: space-between;
-  }
-  .review__preview {
-    width: 100%;
+    padding: 50px 100px;
   }
 
+  .stats {
+    grid-template-columns: min-content 170px 205px;
+    justify-content: space-between;
+    gap: 25px;
+  }
   .stats__stat {
-    grid-template-columns: 1fr;
+    grid-template-columns: unset;
     grid-template-rows: min-content min-content;
-    gap: 0;
+  }
+  .stats__numb {
+    text-align: start;
   }
 
   .burger {
@@ -1144,5 +1143,14 @@ body *, body *::before, body *::after {
 
   .hero__preview {
     align-self: center;
+  }
+}
+@media (min-width: 87.5em) {
+  .review__inner {
+    gap: 50px;
+    padding: 50px 70px 70px 110px;
+  }
+  .review__preview {
+    aspect-ratio: 615/700;
   }
 }
