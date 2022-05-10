@@ -1,0 +1,20 @@
+.underline {
+    position: relative;
+    --bottom: 0px;
+    
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 135px;
+        height: 5px;
+        bottom: var(--bottom);
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        background-color: hsl(var(--clr-cyan-20));
+    }
+    &::after {
+        bottom: calc(var(--bottom) - 15px)
+    }
+}

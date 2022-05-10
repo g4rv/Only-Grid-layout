@@ -33,6 +33,30 @@
             min-width: 250px;
         }
     }
+
+    .projects {
+        &__item {
+            grid-template-columns: 1fr 1fr;
+            max-width: 450px;
+            &:nth-child(even) {
+                .project {
+                    &__preview {
+                        order: -1;
+                    }
+                }
+            }
+        }
+    }
+
+    .review {
+        &__block {
+            grid-template-columns: auto 1fr;
+        }
+        &__preview {
+            width: 90%;
+            aspect-ratio: unset;
+        }
+    }
 }
 
 //768px
@@ -40,6 +64,43 @@
     .nav {
         &__btn {
             max-width: 270px;
+        }
+    }
+
+    .projects {
+        &__title {
+            margin-bottom: 0;
+        }
+        &__list {
+            gap: 25px;
+        }
+        &__item {
+            max-width: 600px;
+        }
+    }
+
+    .review {
+        &__block {
+            grid-template-columns: 1fr 1fr;
+        }
+        &__inner {
+            gap: 60px;
+            padding: 15px 15px 15px 50px;
+        }
+
+        &__quote {
+            text-align: start;
+        }
+        &__preview {
+            width: 100%;
+        }
+    }
+
+    .stats {
+        &__stat {
+            grid-template-columns: 1fr;
+            grid-template-rows: min-content min-content;
+            gap: 0;
         }
     }
 }
@@ -180,6 +241,60 @@
             grid-column: 1/2;
             grid-row: 1/3;
             min-width: 250px;
+        }
+    }
+
+    .projects {
+        &__subtitle {
+            margin-bottom: 160px;
+            &.underline {
+                --bottom: -50px;
+            }
+        }
+        &__list {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        &__item {
+            grid-template-columns: 1fr;
+            max-width: 450px;
+            gap: 15px;
+        }
+    }
+
+    .project {
+        &__preview {
+            align-self: flex-end;
+        }
+    }
+
+    .review {
+        &__block {
+            grid-template-columns: 615px 1fr;
+        }
+        &__inner {
+            justify-content: center;
+            align-content: center;
+            padding: 20px 110px 20px 140px;
+            margin-inline: auto;
+        }
+        &__quote {
+            text-align: start;
+        }
+        &__stats {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            justify-content: space-between;
+        }
+        &__preview {
+            width: 100%;
+        }
+    }
+
+    .stats {
+        &__stat {
+            grid-template-columns: 1fr;
+            grid-template-rows: min-content min-content;
+            gap: 0;
         }
     }
 

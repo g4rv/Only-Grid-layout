@@ -15,10 +15,16 @@ body {
     color: hsl(var(--clr-cyan-60));
     font-size: var(--fz-70);
     font-weight: var(--fw-800);
+    &::first-letter {
+        text-transform: uppercase;
+    }
 }
 
 .h2-like {
     color: hsl(var(--clr-cyan-60));
     font-size: var(--fz-40);
     font-weight: var(--fw-700);
+    &::first-letter {
+        text-transform: uppercase;
+    }
 }
