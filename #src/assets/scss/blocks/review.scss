@@ -42,6 +42,7 @@
     &__quote {
         position: relative;
         color: hsl(var(--clr-cyan-30));
+        font-size: var(--fz-25);
         z-index: var(--z-low);
 
         &::before {
@@ -56,6 +57,7 @@
         position: relative;
         font-style: italic;
         color: hsl(var(--clr-cyan-20));
+        font-size: var(--fz-25);
         z-index: var(--z-low);
     }
 

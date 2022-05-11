@@ -69,6 +69,31 @@
     .clients {
         grid-template-columns: 1fr 1fr;
     }
+    
+    .contact {
+        grid-template-columns: 1fr 2fr;
+
+        &__info {
+            grid-template-rows: min-content min-content;
+            text-align: start;
+            gap: 0;
+        }
+
+        &__subtitle {
+            --bottom: -40px;
+            --marg-center: 0;
+            justify-self: start;
+        }
+    }
+
+    .form {
+        &__switch {
+            text-align: start;
+        }
+        &__btn {
+            justify-self: end;
+        }
+    }
 }
 
 //768px
@@ -107,6 +132,10 @@
         grid-template-columns: repeat(4, auto);
         justify-content: space-evenly;
     }
+
+    .form {
+        padding: 35px 50px;
+    }
 }
 
 //992px
@@ -119,7 +148,7 @@
     .nav {
         position: static;
         display: grid;
-        grid-template-columns: 1fr max-content;
+        grid-template-columns: 4fr 1fr;
         grid-template-rows: 1fr;
         padding: 0;
         width: 100%;
@@ -139,7 +168,6 @@
 
         &__btn {
             justify-self: end;
-            width: 270px;
         }
     }
 

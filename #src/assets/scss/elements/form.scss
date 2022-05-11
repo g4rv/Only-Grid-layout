@@ -1,0 +1,51 @@
+.form {
+    display: grid;
+    gap: 25px;
+    padding: 25px;
+    border: 1px solid hsl(var(--clr-cyan-30));
+
+    & > *, *::placeholder {
+        color: hsl(var(--clr-cyan-30));
+        font-size: var(--fz-25);
+        font-weight: var(--fw-500);
+    }
+    
+    input {
+        padding-top: .5em;
+        padding-bottom: 1em;
+        padding-left: .5em;
+        width: 100%;
+        border-bottom: 1px solid hsl(var(--clr-cyan-30));
+    }
+
+    &__label {
+        display: grid;
+        gap: 15px;
+    }
+
+    &__switch {
+        text-align: center;
+
+        &.active {
+            + .form {
+                &__textarea {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__textarea {
+        display: none;
+        padding: 15px;
+        min-height: 5rem;
+        font-size: inherit;
+        border: 1px solid hsl(var(--clr-cyan-30));
+        border-radius: 5px;
+    }
+
+    &__btn {
+        justify-self: center;
+        color: hsl(var(--clr-neutral-1));
+    }
+}

@@ -1,0 +1,22 @@
+.contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+
+    &__info {
+        display: grid;
+        text-align: center;
+        gap: 15px;
+    }
+
+    &__title {
+    }
+
+    &__subtitle {
+        --bottom: -15px;
+        justify-self: center;
+        max-width: 30ch;
+        color: hsl(var(--clr-cyan-30));
+        font-size: var(--fz-25);
+    }
+}
