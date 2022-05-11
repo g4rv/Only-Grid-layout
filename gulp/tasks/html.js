@@ -1,6 +1,7 @@
 import fileInclude from "gulp-file-include";
-import webpHtmlNosvg from "gulp-webp-html-nosvg";
+import webpHtmlNosvg from "gulp-xv-webp-html";
 import versionNumber from "gulp-version-number";
+import formatHtml from 'gulp-format-html';
 
 export const html = () => {
     return app.gulp.src(app.path.src.html)
@@ -13,10 +14,18 @@ export const html = () => {
         .pipe(fileInclude())
         .pipe(app.plugins.replace(/@img\//g, 'assets/img/'))
         .pipe(app.plugins.replace(/@js\//g, 'assets/js/'))
+        .pipe(app.plugins.replace(/@css\//g, 'assets/css/'))
         .pipe(
             app.plugins.if(
                 app.isBuild,
-                webpHtmlNosvg()
+                webpHtmlNosvg([
+                    '.jpg', 
+                    '.png', 
+                    '.gif', 
+                    '.jpeg', 
+                    '.avif', 
+                    '.tif'
+                ])
             )
         )
         .pipe(
@@ -35,6 +44,14 @@ export const html = () => {
                     'output': {
                         'file': 'gulp/version.json'
                     }
+                })
+            )
+        )
+        .pipe(
+            app.plugins.if(
+                app.isBuild,
+                formatHtml({
+                    indent_size: 4,
                 })
             )
         )

@@ -20,7 +20,7 @@ export const path = {
         js: `${srcFolder}/assets/js/script.js`,
         images: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,gif,webp}`,
         svg: `${srcFolder}/assets/img/**/*.svg`,
-        svgicons: `${srcFolder}/assets/img/svg/*.svg`,
+        svgicons: `${srcFolder}/assets/img/svg/icons/*.svg`,
     },
     watch: {
         html: `${srcFolder}/**/*.html`,

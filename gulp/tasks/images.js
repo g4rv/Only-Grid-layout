@@ -28,6 +28,11 @@ export const images = () => {
                 app.gulp.src(app.path.src.images)
             )
         )
+        .pipe(app.plugins.if(
+                app.isBuild,
+                app.plugins.newer(app.path.build.images)
+            )
+        )
         .pipe(
             app.plugins.if(
                 app.isBuild,

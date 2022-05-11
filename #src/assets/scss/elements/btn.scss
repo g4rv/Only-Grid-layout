@@ -10,6 +10,22 @@
     background-color: hsl(var(--clr-cyan-20));
     border-radius: 15px;
 
+    //transition
+    transition-property: all;
+    transition-duration: var(--transition-time-short);
+    transition-timing-function: var(--transition-timing-f);
+
+    //hover
+    &:hover {
+        color: hsl(var(--clr-cyan-20));
+        background-color: hsl(var(--clr-neutral-1));
+        box-shadow: inset 0px 0px 0px 2px hsl(var(--clr-cyan-20));
+
+        transition-property: all;
+        transition-duration: var(--transition-time-short);
+        transition-timing-function: var(--transition-timing-f);
+    }
+
     &--bold {
         font-weight: var(--fw-700);
     }

@@ -81,7 +81,6 @@ export const fontsStyle = () => {
                     }
                 }
             } else {
-                ('%c Oh my heavens! ', 'background: #222; color: #bada55');
                 console.log(`🎈🎈🎈File scss/fonts.scss already exists. Delete the file to update.🎈🎈🎈`)
             }
         }

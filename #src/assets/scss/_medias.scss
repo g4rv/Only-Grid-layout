@@ -142,6 +142,7 @@
 @include breakpoint-up(large) { // Up /\
 
     .header {
+        position: relative;
         padding: 85px 0 15px;
     }
 

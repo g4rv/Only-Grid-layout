@@ -50,10 +50,24 @@
         color: hsl(var(--clr-cyan-20));
     }
 
+    &__link {
+        transition-property: all; 
+        transition-duration: var(--transition-time-short);
+        transition-timing-function: var(--transition-timing-f);
+
+        &:hover {
+            color: hsl(var(--clr-cyan-30));
+            transition-property: all; 
+            transition-duration: var(--transition-time-short);
+            transition-timing-function: var(--transition-timing-f);
+        }
+    }
+    
     &__descr {
         font-size: var(--fz-20);
         color: hsl(var(--clr-cyan-30));
     }
+
 
     &__preview {
         min-width: 150px;

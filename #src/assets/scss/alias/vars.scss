@@ -66,4 +66,9 @@ $z-index: (
     @each $index, $height in $z-index {
         --z-#{$index}: #{$height};
     }
+
+    --transition-time-short: .2s;
+    --transition-time-long: .4s;
+    --transition-timing-f: ease-in-out;
+
 }

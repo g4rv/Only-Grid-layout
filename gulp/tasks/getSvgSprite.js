@@ -10,12 +10,26 @@ export const getSvgSprite = () => {
         ))
         .pipe(svgSprite({
             mode: {
-                stack: {
-                    sprite: `../icons/icons.svg`,
-                    // Create page with icons
-                    example: true,
+                // Sprite method
+                symbol: {
+                    //Sprite path
+                    sprite: `../svg/sprite/sprite.svg`,
+
+                    //Creates html document with example of sprites
+                    // example: true,
                 }
             },
+
+            //Removes "width" and "height" properties on svg
+            // shape: {
+            //     transform: [{
+            //         svgo: {
+            //             plugins: [{
+            //                 removeDimensions: true,
+            //             }]
+            //         }
+            //     }]
+            // }
         }))
         .pipe(app.gulp.dest(app.path.build.images))
 }
