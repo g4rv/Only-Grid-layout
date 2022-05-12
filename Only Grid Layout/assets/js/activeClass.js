@@ -14,27 +14,22 @@ const actiiveClass = () => {
         obj.classList.toggle('active');
     }
 
-    const removeActiveClass = (obj) => {
-        obj.classList.remove('active');
-    }
-
-    const addActiveClass = (obj) => {
-        obj.classList.add('active');
-    }
-
     formSwitches.forEach(formSwitch => {
         formSwitch.addEventListener('click', () => {
             toggleActiveClass(formSwitch);
         })
     })
 
-    navLinks.forEach(navLink => {
-        const navLinkHref = navLink.href;
-
-        if(window.location.href === navLinkHref) {
-            toggleActiveClass(navLink);
-        }
+    document.addEventListener('load', () => {
+        navLinks.forEach(navLink => {
+            const navLinkHref = navLink.href;
+    
+            if(window.location.href.indexOf(navLinkHref) != -1) {
+                toggleActiveClass(navLink);
+            }
+        })
     })
+
 
     burgerBtn.addEventListener('click', () => {
         toggleActiveClass(burgerBtn);

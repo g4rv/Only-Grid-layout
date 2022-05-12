@@ -20,13 +20,16 @@ const actiiveClass = () => {
         })
     })
 
-    navLinks.forEach(navLink => {
-        const navLinkHref = navLink.href;
-
-        if(window.location.href.indexOf(navLinkHref) != -1) {
-            toggleActiveClass(navLink);
-        }
+    document.addEventListener('load', () => {
+        navLinks.forEach(navLink => {
+            const navLinkHref = navLink.href;
+    
+            if(window.location.href.indexOf(navLinkHref) != -1) {
+                toggleActiveClass(navLink);
+            }
+        })
     })
+
 
     burgerBtn.addEventListener('click', () => {
         toggleActiveClass(burgerBtn);
